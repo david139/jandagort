@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout/head :: head">
+    <title>
+        asd
+    </title>
+</head>
+<body>
+<div th:replace="layout/header :: header(empirePage = true)">
+</div>
+<div class="container">
+    <p th:text="${user.username}"></p>
+</div>
+<div th:replace="layout/footer :: footer">
+    asd
+</div>
+</body>
+</html>

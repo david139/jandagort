@@ -1,0 +1,23 @@
+#chat-window {
+    height: 300px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    overflow-y: auto;
+}
+
+.container.no-padding {
+    padding: 0;
+}
+
+#chat-window #chat-messages {
+    padding-left: 0;
+    word-wrap: break-word;
+    list-style-type: none;
+}
+
+#chat-window .message-owner {
+    font-weight: bold;
+}
