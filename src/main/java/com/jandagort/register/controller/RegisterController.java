@@ -24,24 +24,23 @@ import javax.validation.Valid;
 
 @Controller
 public class RegisterController {
-    public static final String REGISTER_SUCCESS_ALERT_TEXT = "Sikeres regisztráció, most már bejelentkezhet.";
-    private static final Logger LOGGER = LoggerFactory.getLogger(RegisterController.class);
-    public static final String REGISTER_MAPPING = "/register";
-    public static final String REGISTER_VIEW = "register";
-    public static final String REGISTER_SUCCESS_ALERT_KEY = "register_success";
-    public static final String INVALID_EMAIL_ERROR_KEY = "emailError";
-    public static final String INVALID_EMAIL_ERROR_TEXT = "Hibás e-mail formátum.";
-    public static final String INVALID_PASSWORD_ERROR_KEY = "passwordError";
-    public static final String INVALID_PASSWORD_ERROR_TEXT = "Túl rövid jelszó, minimum 4 karakter.";
-    public static final String INVALID_USERNAME_ERROR = "usernameError";
-    public static final String INVALID_USERNAME_TEXT = "Túl rövid felhasználónév.";
-    public static final String PASSWORDS_NOT_EQUAL_ERROR_KEY = "passwords_not_equal";
-    public static final String PASSWORDS_NOT_EQUAL_ERROR_TEXT = "A jelszó és az ellenőrző jelszó nem egyeznek meg.";
-    public static final String EMAIL_IN_USE_ERROR_KEY = "email_in_use";
-    public static final String EMAIL_IN_USE_ERROR_TEXT = "Az email cím már használatban van.";
-    public static final String USERNAME_IN_USE_ERROR_KEY = "username_in_use";
-    public static final String USERNAME_IN_USE_ERROR_TEXT = "Az felhasználónév már használatban van.";
-    public static final String REDIRECT = "redirect:";
+    private static final String REGISTER_SUCCESS_ALERT_TEXT = "Sikeres regisztráció, most már bejelentkezhet.";
+    private static final String REGISTER_MAPPING = "/register";
+    private static final String REGISTER_VIEW = "register";
+    private static final String REGISTER_SUCCESS_ALERT_KEY = "register_success";
+    private static final String INVALID_EMAIL_ERROR_KEY = "emailError";
+    private static final String INVALID_EMAIL_ERROR_TEXT = "Hibás e-mail formátum.";
+    private static final String INVALID_PASSWORD_ERROR_KEY = "passwordError";
+    private static final String INVALID_PASSWORD_ERROR_TEXT = "Túl rövid jelszó, minimum 4 karakter.";
+    private static final String INVALID_USERNAME_ERROR = "usernameError";
+    private static final String INVALID_USERNAME_TEXT = "Túl rövid felhasználónév.";
+    private static final String PASSWORDS_NOT_EQUAL_ERROR_KEY = "passwords_not_equal";
+    private static final String PASSWORDS_NOT_EQUAL_ERROR_TEXT = "A jelszó és az ellenőrző jelszó nem egyeznek meg.";
+    private static final String EMAIL_IN_USE_ERROR_KEY = "email_in_use";
+    private static final String EMAIL_IN_USE_ERROR_TEXT = "Az email cím már használatban van.";
+    private static final String USERNAME_IN_USE_ERROR_KEY = "username_in_use";
+    private static final String USERNAME_IN_USE_ERROR_TEXT = "Az felhasználónév már használatban van.";
+    private static final String REDIRECT = "redirect:";
 
     @Autowired
     private UserService userService;

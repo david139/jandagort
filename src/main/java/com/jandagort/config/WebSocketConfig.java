@@ -9,9 +9,8 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
-
-    public static final String CHAT_SOCKET_ENDPOINT = "/chatsocket";
     public static final String CHAT_SOCKET_OUT = "/chat";
+    private static final String CHAT_SOCKET_ENDPOINT = "/chatsocket";
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {

@@ -1,7 +1,6 @@
 package com.jandagort;
 
 import com.jandagort.roundrunner.RoundRunner;
-import com.jandagort.config.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;

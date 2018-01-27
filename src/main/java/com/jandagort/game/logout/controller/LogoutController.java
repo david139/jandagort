@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/game")
 public class LogoutController {
     @RequestMapping("/logout")
-    public ModelAndView logout(HttpServletRequest request){
+    public ModelAndView logout(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();
         request.getSession().removeAttribute("user");
         mav.setViewName("redirect:/login");

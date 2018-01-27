@@ -6,6 +6,7 @@ import com.jandagort.game.chat.repository.ChatService;
 import com.jandagort.config.WebSocketConfig;
 import com.jandagort.user.domain.UserEntity;
 import com.jandagort.util.SessionUtil;
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,14 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/game")
+@AllArgsConstructor
 public class ChatController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ChatController.class);
     private static final String CHAT_MAPPING = "/chat";
-    public static final String CHAT_VIEW = "chat";
-    public static final String PUBLIC_CHANNEL_NAME = "/public";
+    private static final String CHAT_VIEW = "chat";
+    private static final String PUBLIC_CHANNEL_NAME = "/public";
 
-    @Autowired
     private SimpMessagingTemplate template;
-
-    @Autowired
-    ChatService service;
+    private ChatService service;
 
     @RequestMapping(value = CHAT_MAPPING, method = RequestMethod.GET)
     public ModelAndView chatSite() {

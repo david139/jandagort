@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/game")
 public class ProfileController {
 
-    public static final String PROFILE_MAPPING = "/profile";
-    public static final String PROFILE_VIEW = "profile";
+    private static final String PROFILE_MAPPING = "/profile";
+    private static final String PROFILE_VIEW = "profile";
 
     @RequestMapping(PROFILE_MAPPING)
-    public ModelAndView profileSite(HttpServletRequest request){
+    public ModelAndView profileSite(HttpServletRequest request) {
         ModelAndView mav = new ModelAndView();
         UserEntity user = SessionUtil.getSessionUser(request);
 

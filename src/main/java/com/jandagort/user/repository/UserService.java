@@ -15,10 +15,6 @@ public class UserService {
         this.userRepo = userRepo;
     }
 
-    public UserEntity find(long id) {
-        return userRepo.findOne(id);
-    }
-
     public void save(UserEntity user) {
         userRepo.save(user);
     }
@@ -27,7 +23,11 @@ public class UserService {
         return userRepo.findOneByEmailAndPassword(email, password);
     }
 
-    public UserEntity getByEmail(String email){return userRepo.findOneByEmail(email);}
+    public UserEntity getByEmail(String email) {
+        return userRepo.findOneByEmail(email);
+    }
 
-    public UserEntity getByUsername(String username){return userRepo.findOneByUsername(username);}
+    public UserEntity getByUsername(String username) {
+        return userRepo.findOneByUsername(username);
+    }
 }

@@ -4,6 +4,7 @@ import com.jandagort.login.domain.LoginRequest;
 import com.jandagort.user.domain.UserEntity;
 import com.jandagort.user.repository.UserService;
 import com.jandagort.util.SessionUtil;
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,20 +20,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 @Controller
+@AllArgsConstructor
 public class LoginController {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
-    public static final String LOGIN_MAPPING = "/login";
     public static final String LOGIN_VIEW = "login";
-    public static final String REDIRECT_GAME_EMPIRE = "redirect:game/empire";
-    public static final String INVALID_EMAIL_ERROR_KEY = "emailError";
-    public static final String INVALID_EMAIL_ERROR_TEXT = "Hibás e-mail formátum.";
-    public static final String INVALID_PASSWORD_ERROR_KEY = "passwordError";
-    public static final String INVALID_PASSWORD_ERROR_TEXT = "Túl rövid jelszó, minimum 4 karakter.";
-    public static final String WRONG_CREDENTIALS_ERROR_KEY = "not_exist";
-    public static final String WRONG_CREDENTIALS_ERROR_VALUE = "Hibás e-mail cím vagy jelszó.";
 
-    @Autowired
-    UserService userService;
+    private static final String LOGIN_MAPPING = "/login";
+    private static final String REDIRECT_GAME_EMPIRE = "redirect:game/empire";
+    private static final String INVALID_EMAIL_ERROR_KEY = "emailError";
+    private static final String INVALID_EMAIL_ERROR_TEXT = "Hibás e-mail formátum.";
+    private static final String INVALID_PASSWORD_ERROR_KEY = "passwordError";
+    private static final String INVALID_PASSWORD_ERROR_TEXT = "Túl rövid jelszó, minimum 4 karakter.";
+    private static final String WRONG_CREDENTIALS_ERROR_KEY = "not_exist";
+    private static final String WRONG_CREDENTIALS_ERROR_VALUE = "Hibás e-mail cím vagy jelszó.";
+
+    private UserService userService;
 
     @RequestMapping(value = LOGIN_MAPPING, method = RequestMethod.GET)
     public String shogLoginSite(LoginRequest loginRequest) {

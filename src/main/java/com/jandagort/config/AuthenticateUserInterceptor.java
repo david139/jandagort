@@ -11,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthenticateUserInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if( (request.getRequestURI().equals("/login")
+        if ((request.getRequestURI().equals("/login")
                 || request.getRequestURI().equals("/register"))
-                && request.getSession().getAttribute("user") != null){
+                && request.getSession().getAttribute("user") != null) {
             response.sendRedirect("/game/empire");
             return false;
-        } else if(request.getRequestURI().contains("/game")
-                && request.getSession().getAttribute("user") == null){
+        } else if (request.getRequestURI().contains("/game")
+                && request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return false;
         }

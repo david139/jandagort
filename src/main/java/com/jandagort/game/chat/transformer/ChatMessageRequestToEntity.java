@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 @Component
 public class ChatMessageRequestToEntity {
-    public ChatMessageEntity transform(ChatMessageRequest request, UserEntity user){
+    public ChatMessageEntity transform(ChatMessageRequest request, UserEntity user) {
         ChatMessageEntity entity = new ChatMessageEntity();
         entity.setContent(HtmlUtils.htmlEscape(request.getContent()));
         entity.setSender(user);

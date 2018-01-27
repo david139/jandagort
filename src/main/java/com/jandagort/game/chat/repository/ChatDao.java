@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface ChatDao extends CrudRepository<ChatMessageEntity, Long> {
     @Query(value = "SELECT c FROM ChatMessageEntity c WHERE c.timeSent > :threshold")
-    List<ChatMessageEntity> findRecentMessages(@Param("threshold")LocalDateTime threshold);
+    List<ChatMessageEntity> findRecentMessages(@Param("threshold") LocalDateTime threshold);
 }
