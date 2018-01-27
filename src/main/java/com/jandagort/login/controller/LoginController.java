@@ -7,7 +7,6 @@ import com.jandagort.util.SessionUtil;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,6 +34,12 @@ public class LoginController {
     private static final String WRONG_CREDENTIALS_ERROR_VALUE = "Hibás e-mail cím vagy jelszó.";
 
     private UserService userService;
+
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String emptyPath(){
+        return LOGIN_VIEW;
+    }
 
     @RequestMapping(value = LOGIN_MAPPING, method = RequestMethod.GET)
     public String shogLoginSite(LoginRequest loginRequest) {

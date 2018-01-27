@@ -1,13 +1,11 @@
 package com.jandagort.register.controller;
 
 import com.jandagort.login.controller.LoginController;
-import com.jandagort.login.domain.LoginRequest;
-import com.jandagort.user.domain.UserEntity;
 import com.jandagort.register.domain.RegisterRequest;
 import com.jandagort.register.transformer.RegisterRequestToUser;
+import com.jandagort.user.domain.UserEntity;
 import com.jandagort.user.repository.UserService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -23,6 +21,7 @@ import javax.validation.Valid;
 
 
 @Controller
+@AllArgsConstructor
 public class RegisterController {
     private static final String REGISTER_SUCCESS_ALERT_TEXT = "Sikeres regisztráció, most már bejelentkezhet.";
     private static final String REGISTER_MAPPING = "/register";
@@ -42,10 +41,7 @@ public class RegisterController {
     private static final String USERNAME_IN_USE_ERROR_TEXT = "Az felhasználónév már használatban van.";
     private static final String REDIRECT = "redirect:";
 
-    @Autowired
     private UserService userService;
-
-    @Autowired
     private RegisterRequestToUser transformer;
 
     @RequestMapping(value = REGISTER_MAPPING, method = RequestMethod.GET)

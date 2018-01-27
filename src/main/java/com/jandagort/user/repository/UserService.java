@@ -2,18 +2,13 @@ package com.jandagort.user.repository;
 
 
 import com.jandagort.user.domain.UserEntity;
-import com.jandagort.user.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class UserService {
     private UserRepository userRepo;
-
-    @Autowired
-    public UserService(UserRepository userRepo) {
-        this.userRepo = userRepo;
-    }
 
     public void save(UserEntity user) {
         userRepo.save(user);

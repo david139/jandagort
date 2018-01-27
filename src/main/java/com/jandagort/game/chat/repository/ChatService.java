@@ -8,7 +8,6 @@ import com.jandagort.game.chat.transformer.ChatMessageRequestToEntity;
 import com.jandagort.user.domain.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

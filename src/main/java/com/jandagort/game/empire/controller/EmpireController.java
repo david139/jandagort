@@ -20,11 +20,6 @@ public class EmpireController {
     private static final String EMPIRE_MAPPING = "/empire";
     private static final String EMPIRE_VIEW = "empire";
 
-    @RequestMapping("/")
-    public String emptyPath(){
-        return "redirect:/login";
-    }
-
     @RequestMapping(EMPIRE_MAPPING)
     public ModelAndView empire(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView mav = new ModelAndView();
