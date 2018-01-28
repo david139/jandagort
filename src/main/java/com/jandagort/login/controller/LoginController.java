@@ -3,7 +3,7 @@ package com.jandagort.login.controller;
 import com.jandagort.login.domain.LoginRequest;
 import com.jandagort.user.domain.UserEntity;
 import com.jandagort.user.repository.UserService;
-import com.jandagort.util.SessionUtil;
+import com.jandagort.user.SessionUtil;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

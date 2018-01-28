@@ -23,7 +23,7 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer {
         // use the /topic prefix for outgoing WebSocket communication
         config.enableSimpleBroker(CHAT_SOCKET_OUT);
 
-        // use the /app prefix for others
-        config.setApplicationDestinationPrefixes("/app");
+        //use the /app prefix for others
+        config.setApplicationDestinationPrefixes("/game");
     }
 }

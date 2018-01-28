@@ -5,8 +5,9 @@ import com.jandagort.game.chat.domain.ChatMessage;
 import com.jandagort.game.chat.domain.ChatMessageRequest;
 import com.jandagort.game.chat.repository.ChatService;
 import com.jandagort.user.domain.UserEntity;
-import com.jandagort.util.SessionUtil;
+import com.jandagort.user.SessionUtil;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,6 +29,7 @@ public class ChatController {
 
     private SimpMessagingTemplate template;
     private ChatService service;
+    @Qualifier("userSession")
 
     @RequestMapping(value = CHAT_MAPPING, method = RequestMethod.GET)
     public ModelAndView chatSite() {

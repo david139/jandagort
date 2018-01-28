@@ -1,4 +1,4 @@
-package com.jandagort.util;
+package com.jandagort.user;
 
 import com.jandagort.user.domain.UserEntity;
 

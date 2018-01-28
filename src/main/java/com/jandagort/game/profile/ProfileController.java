@@ -2,7 +2,7 @@ package com.jandagort.game.profile;
 
 
 import com.jandagort.user.domain.UserEntity;
-import com.jandagort.util.SessionUtil;
+import com.jandagort.user.SessionUtil;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 

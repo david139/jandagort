@@ -1,4 +1,4 @@
-package com.jandagort.roundrunner;
+package com.jandagort.game.economy.roundrunner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
