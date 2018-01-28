@@ -35,14 +35,13 @@ public class LoginController {
 
     private UserService userService;
 
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String emptyPath(){
-        return LOGIN_VIEW;
+    public String empty(LoginRequest loginRequest) {
+        return showLoginSite(loginRequest);
     }
 
     @RequestMapping(value = LOGIN_MAPPING, method = RequestMethod.GET)
-    public String shogLoginSite(LoginRequest loginRequest) {
+    public String showLoginSite(LoginRequest loginRequest) {
         return LOGIN_VIEW;
     }
 

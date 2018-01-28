@@ -53,9 +53,11 @@ dependencies {
 
     compile('org.projectlombok:lombok:1.16.20')
 
+    testCompile("junit:junit")
+    testCompile('org.mockito:mockito-all:1.9.5')
+    testCompile('org.assertj:assertj-core:3.9.0')
 
 
-            testCompile("junit:junit")
 }
 
 task wrapper(type: Wrapper) {
