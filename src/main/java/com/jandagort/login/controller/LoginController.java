@@ -23,8 +23,8 @@ import javax.validation.Valid;
 public class LoginController {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
     public static final String LOGIN_VIEW = "login";
+    public static final String LOGIN_MAPPING = "/login";
 
-    private static final String LOGIN_MAPPING = "/login";
     private static final String REDIRECT_GAME_EMPIRE = "redirect:game/empire";
     private static final String INVALID_EMAIL_ERROR_KEY = "emailError";
     private static final String INVALID_EMAIL_ERROR_TEXT = "Hibás e-mail formátum.";
@@ -32,11 +32,12 @@ public class LoginController {
     private static final String INVALID_PASSWORD_ERROR_TEXT = "Túl rövid jelszó, minimum 4 karakter.";
     private static final String WRONG_CREDENTIALS_ERROR_KEY = "not_exist";
     private static final String WRONG_CREDENTIALS_ERROR_VALUE = "Hibás e-mail cím vagy jelszó.";
+    private static final String EMPTY_URI = "/";
 
     private UserService userService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String empty(LoginRequest loginRequest) {
+    @RequestMapping(value = EMPTY_URI, method = RequestMethod.GET)
+    public String handleEmptyUri(LoginRequest loginRequest) {
         return showLoginSite(loginRequest);
     }
 

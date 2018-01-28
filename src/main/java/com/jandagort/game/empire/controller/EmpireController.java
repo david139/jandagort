@@ -13,11 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-@RequestMapping("/game")
 @Slf4j
 public class EmpireController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(EmpireController.class);
-    private static final String EMPIRE_MAPPING = "/empire";
+    public static final String EMPIRE_MAPPING = "/game/empire";
     private static final String EMPIRE_VIEW = "empire";
 
     @RequestMapping(EMPIRE_MAPPING)
