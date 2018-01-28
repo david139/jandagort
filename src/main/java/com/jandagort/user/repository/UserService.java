@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 public class UserService {
     private UserRepository userRepo;
 
-    public void save(UserEntity user) {
-        userRepo.save(user);
+    public UserEntity save(UserEntity user) {
+        return userRepo.save(user);
     }
 
     public UserEntity login(String email, String password) {

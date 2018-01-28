@@ -1,5 +1,7 @@
 package com.jandagort.register.controller;
 
+import com.jandagort.game.economy.planet.PlanetEntity;
+import com.jandagort.game.economy.planet.repository.PlanetService;
 import com.jandagort.login.controller.LoginController;
 import com.jandagort.register.domain.RegisterRequest;
 import com.jandagort.register.transformer.RegisterRequestToUser;
@@ -42,6 +44,7 @@ public class RegisterController {
     private static final String REDIRECT = "redirect:";
 
     private UserService userService;
+    private PlanetService planetService;
     private RegisterRequestToUser transformer;
 
     @RequestMapping(value = REGISTER_MAPPING, method = RequestMethod.GET)
@@ -77,7 +80,10 @@ public class RegisterController {
 
     private void registerUser(RegisterRequest registerRequest) {
         UserEntity user = transformer.transform(registerRequest);
-        userService.save(user);
+        UserEntity savedUser = userService.save(user);
+        PlanetEntity planet = new PlanetEntity();
+        planet.setOwner(savedUser);
+        planetService.save(planet);
     }
 
     private boolean registerRequestIsValid(RegisterRequest registerRequest, ModelAndView mav) {

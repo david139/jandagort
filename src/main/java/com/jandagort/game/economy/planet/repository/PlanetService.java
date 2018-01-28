@@ -19,4 +19,8 @@ public class PlanetService {
         return planetRepository.save(planetEntity);
     }
 
+    public Iterable<PlanetEntity> findAll(){
+        return planetRepository.findAll();
+    }
+
 }

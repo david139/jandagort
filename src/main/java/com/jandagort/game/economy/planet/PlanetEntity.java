@@ -4,10 +4,8 @@ import com.jandagort.user.domain.UserEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 @Data
@@ -16,6 +14,7 @@ import java.math.BigInteger;
 @Table(name = "planets")
 public class PlanetEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @ManyToOne
     private UserEntity owner;
@@ -25,10 +24,12 @@ public class PlanetEntity {
     public void stepRound() {
         if (food.compareTo(population) >= 1) {
             BigInteger remainingFood = food.subtract(population);
-            BigInteger newPopulation = remainingFood.subtract(population).min(population.multiply(new BigInteger("1.1")));
-
+            BigInteger newPopulation = remainingFood.min(population.add(population.divide(new BigInteger("10"))));
             food = remainingFood;
             population = newPopulation;
+        } else {
+            food = new BigInteger("0");
+            population = population.subtract(population.divide(new BigInteger("10")));
         }
     }
 
