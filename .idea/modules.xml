@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Jandagort.iml" filepath="$PROJECT_DIR$/Jandagort.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Jandagort.iml" filepath="$PROJECT_DIR$/.idea/modules/Jandagort.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Jandagort_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Jandagort_main.iml" group="Jandagort" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Jandagort_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Jandagort_test.iml" group="Jandagort" />
     </modules>
