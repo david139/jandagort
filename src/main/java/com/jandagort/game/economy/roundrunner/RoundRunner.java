@@ -22,11 +22,9 @@ public class RoundRunner implements Runnable {
                 planetService.findAll().forEach(planetEntity -> {
                     planetEntity.stepRound();
                     planetService.save(planetEntity);
-                    log.info("population: {}", planetEntity.getPopulation());
-                    log.info("food: {}", planetEntity.getFood());
                 });
                 log.info("Round change happened");
-                Thread.sleep(500);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

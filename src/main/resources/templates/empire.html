@@ -10,12 +10,31 @@
 <div th:replace="layout/header :: header(empirePage = true)">
 </div>
 <div class="container">
-    <p th:text="${user.username}"></p>
-    <p th:text="${planet.food}"></p>
-    <p th:text="${planet.population}"></p>
+    <h2>Resources</h2>
+    <table>
+        <tr>
+            <td>Food</td>
+            <td th:text="${planet.food}"></td>
+        </tr>
+        <tr>
+            <td>Population</td>
+            <td th:text="${planet.population}"></td>
+        </tr>
+    </table>
 </div>
+
+<div class="container">
+    <h2>Buildings</h2>
+
+    <table>
+        <tr>
+            <td>Village</td>
+            <td th:text="${planet.villages}"></td>
+        </tr>
+    </table>
+</div>
+
 <div th:replace="layout/footer :: footer">
-    asd
 </div>
 </body>
 </html>
