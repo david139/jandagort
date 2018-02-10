@@ -1,6 +1,6 @@
 package com.jandagort;
 
-import com.jandagort.game.economy.roundrunner.RoundRunner;
+import com.jandagort.game.economy.RoundRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

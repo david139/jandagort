@@ -1,4 +1,4 @@
-package com.jandagort.game.economy.roundrunner;
+package com.jandagort.game.economy;
 
 import com.jandagort.game.economy.planet.repository.PlanetService;
 import lombok.AllArgsConstructor;

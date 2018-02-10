@@ -1,4 +1,4 @@
-package com.jandagort.game.economy.planet;
+package com.jandagort.game.economy.planet.repository;
 
 import com.jandagort.user.domain.UserEntity;
 import lombok.Data;
@@ -20,7 +20,11 @@ public class PlanetEntity {
     private UserEntity owner;
     private BigInteger food = new BigInteger("10000000000");
     private BigInteger population = new BigInteger("100");
+    private BigInteger electricity = new BigInteger("1000");
+
     private BigInteger villages = new BigInteger("10");
+    private BigInteger powerPlants = new BigInteger("10");
+    private BigInteger farms = new BigInteger("10");
 
     public void stepRound() {
         if (food.compareTo(population) >= 1) {

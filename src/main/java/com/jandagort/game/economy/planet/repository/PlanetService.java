@@ -1,6 +1,5 @@
 package com.jandagort.game.economy.planet.repository;
 
-import com.jandagort.game.economy.planet.PlanetEntity;
 import com.jandagort.user.domain.UserEntity;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;

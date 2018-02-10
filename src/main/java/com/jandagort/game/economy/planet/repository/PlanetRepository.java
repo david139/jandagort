@@ -1,6 +1,5 @@
 package com.jandagort.game.economy.planet.repository;
 
-import com.jandagort.game.economy.planet.PlanetEntity;
 import com.jandagort.user.domain.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
