@@ -14,6 +14,7 @@ public class Supply {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     private BigInteger food;
     private BigInteger electricity;
     private BigInteger population;

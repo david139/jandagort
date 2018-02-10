@@ -21,9 +21,7 @@ public class RegisterConfiguration {
         planetEntity.setSupply(supply);
         planetEntity.setProduction(production);
 
-        planetEntity.setVillages(new BigInteger("10"));
-        planetEntity.setPowerPlants(new BigInteger("10"));
-        planetEntity.setFarms(new BigInteger("10"));
+        planetEntity.setUp();
 
         return planetEntity;
     }
@@ -31,14 +29,15 @@ public class RegisterConfiguration {
 
     @Bean
     @Scope("prototype")
-    public Supply supplies() {
+    public Supply supply() {
         Supply supply = new Supply();
-        supply.setFood(new BigInteger("10000000"));
-        supply.setElectricity(new BigInteger("10000000"));
-        supply.setPopulation(new BigInteger("1000"));
+        supply.setFood(new BigInteger("0"));
+        supply.setElectricity(new BigInteger("0"));
+        supply.setPopulation(new BigInteger("0"));
 
         return supply;
     }
+
 
     @Bean
     @Scope("prototype")
@@ -51,14 +50,16 @@ public class RegisterConfiguration {
         return consumption;
     }
 
+
     @Bean
     @Scope("prototype")
-    public Production production() {
+    public Production resources() {
         Production production = new Production();
         production.setFood(new BigInteger("0"));
         production.setElectricity(new BigInteger("0"));
-        production.setPopulation(new BigInteger("0"));
+        production.setResidence(new BigInteger("0"));
 
         return production;
     }
+
 }

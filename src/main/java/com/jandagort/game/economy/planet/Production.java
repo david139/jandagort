@@ -16,5 +16,5 @@ public class Production {
     private long id;
     private BigInteger food;
     private BigInteger electricity;
-    private BigInteger population;
+    private BigInteger residence;
 }
