@@ -9,8 +9,8 @@ import java.math.BigInteger;
 @Scope("prototype")
 @Data
 @Entity
-@Table(name = "consumptions")
-public class Consumption {
+@Table(name = "productions")
+public class Production {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
