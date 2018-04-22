@@ -1,5 +1,6 @@
 package com.jandagort.register.controller;
 
+import com.jandagort.game.economy.planet.repository.PlanetEntityFactory;
 import com.jandagort.game.economy.planet.repository.PlanetEntity;
 import com.jandagort.game.economy.planet.repository.PlanetService;
 import com.jandagort.login.controller.LoginController;
@@ -8,7 +9,6 @@ import com.jandagort.register.transformer.RegisterRequestToUser;
 import com.jandagort.user.domain.UserEntity;
 import com.jandagort.user.repository.UserService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -46,7 +46,7 @@ public class RegisterController {
     private UserService userService;
     private PlanetService planetService;
     private RegisterRequestToUser transformer;
-    private ObjectFactory<PlanetEntity> planetEntityFactory;
+    private PlanetEntityFactory planetEntityFactory;
 
 
     @RequestMapping(value = REGISTER_MAPPING, method = RequestMethod.GET)
@@ -83,7 +83,7 @@ public class RegisterController {
     private void registerUser(RegisterRequest registerRequest) {
         UserEntity user = transformer.transform(registerRequest);
         UserEntity savedUser = userService.save(user);
-        PlanetEntity planet = planetEntityFactory.getObject();
+        PlanetEntity planet = planetEntityFactory.getInstance();
         planet.setOwner(savedUser);
         planetService.save(planet);
     }
