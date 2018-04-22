@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.context.annotation.Scope;
 
 import javax.persistence.*;
-import java.math.BigInteger;
+import java.math.BigDecimal;
 
 @Scope("prototype")
 @Data
@@ -15,7 +15,7 @@ public class Supply {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private BigInteger food;
-    private BigInteger electricity;
-    private BigInteger population;
+    private BigDecimal food;
+    private BigDecimal electricity;
+    private BigDecimal population;
 }
